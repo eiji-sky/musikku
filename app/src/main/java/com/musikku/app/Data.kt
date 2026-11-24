@@ -117,4 +117,21 @@ object Store {
         cur.forEach { a.put(it) }
         sp(ctx).edit().putString("extras", a.toString()).apply()
     }
+
+    fun recents(ctx: Context): List<String> {
+        val raw = sp(ctx).getString("recents", "[]") ?: "[]"
+        return try {
+            val a = JSONArray(raw)
+            (0 until a.length()).map { a.getString(it) }
+        } catch (e: Exception) { emptyList() }
+    }
+
+    fun pushRecent(ctx: Context, uri: String) {
+        val cur = recents(ctx).toMutableList()
+        cur.remove(uri)
+        cur.add(0, uri)
+        val a = JSONArray()
+        cur.take(20).forEach { a.put(it) }
+        sp(ctx).edit().putString("recents", a.toString()).apply()
+    }
 }

@@ -1,18 +1,11 @@
-# Musikku — pemutar musik sederhana
+# Musikku — pemutar musik sederhana (UI baru)
 
-Fitur: putar lagu dari memori internal & kartu SD, pilih lagu sendiri, buat/kelola playlist,
-seekbar, prev/next, tetap jalan di background.
+- **Home**: kartu playlist besar, "Terakhir diputar", "Semua lagu" (geser horizontal)
+- **Now Playing**: piringan hitam berputar + jarum, seekbar, shuffle / prev / play / next / repeat
+- Tab bar mengambang (Home, Lagu, Playlist) + mini player
+- Lagu dari memori internal & kartu SD otomatis terbaca; tombol "+" untuk pilih file manual
+- Tekan lama lagu = tambah ke playlist; tekan lama playlist = hapus
 
-## Cara dapat APK (paling gampang, tanpa install apa pun)
-1. Buat repo baru di github.com, upload SEMUA isi folder ini (termasuk folder .github).
-2. Buka tab **Actions** -> workflow "Build APK" jalan otomatis (+/- 3-5 menit).
-3. Klik run yang selesai -> bagian **Artifacts** -> download **Musikku-APK** (zip berisi app-debug.apk).
-4. Kirim ke HP, install (izinkan "install dari sumber tidak dikenal").
-
-## Atau pakai Android Studio
-File -> Open folder ini -> Build -> Build APK(s). Hasil: app/build/outputs/apk/debug/app-debug.apk
-
-## Pemakaian
-- Tab **Lagu**: tap = putar. Tekan lama = tambahkan ke playlist.
-- Tab **Playlist**: "+ Buat playlist baru", tap playlist untuk buka, "+ Tambah / pilih lagu" untuk centang lagu.
-- Tombol **+ File**: pilih file audio manual (kalau ada lagu di SD card yang tidak terdeteksi).
+## Build APK
+Upload semua isi folder ini ke GitHub -> tab Actions -> download artifact "Musikku-APK".
+Atau Android Studio: Build -> Build APK(s).
